@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+	<link rel="stylesheet" href="{% static 'CSS/home_grid.css' %}"/>
+{% endblock %}
+
+
+{% block content %}
+<form class="search_form" name="search_form" method="GET" action="{% url 'search' %}">
+    <input class="search_input" type="text" placeholder="Search.." name="search">
+    <input class="search_button" type="submit" value="Bul">
+	<!-- <button type="submit">Search</button> -->
+</form>
+<br><br>
+
+{% if resultnumber %}
+	<p>{{resultnumber}} adet listelendi</p>
+{% else %}
+{% endif %}
+
+<div class="grid">
+	{% for result in results %}
+	<div class="col">
+		<b>Marka:</b> <p class="p_class">{{result.brand}}</p><br class="br_class">
+		<b>Parça No:</b> <p class="p_class">{{result.part_no}}</p><br class="br_class">
+		<b>Açıklama:</b> <p class="p_class">{{result.description}}</p><br class="br_class">
+		<b>Değişen:</b> <p class="p_class">{{result.cross_part}}</p><br class="br_class">
+		<b>Fiyat:</b> <p class="p_class">{{result.price}} TL</p><br class="br_class">
+		<b>Satıcı:</b> <p class="p_class"><a href="{{result.url}}" target="_blank">{{result.supplier}}</a>
+		
+	</div>
+	{% endfor %}
+</div>
+
+
+
+
+
+
+{% endblock %}
+

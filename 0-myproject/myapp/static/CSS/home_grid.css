@@ -1,0 +1,45 @@
+.grid {
+	display: grid;
+	grid-template-columns: 200px 200px 200px 200px;
+	grid-auto-rows: auto;
+	justify-content: center;
+	grid-gap: 20px;
+}
+
+.col {
+	padding:10px;
+	grid-column: span 1;
+	border:1px solid black;
+	border-radius:15px;
+}
+
+body {
+	background-color:gray;
+}
+
+.p_class {
+	display:inline-block;
+}
+
+.br_class {
+    display: block;
+    margin-top: -12px;
+    content: "";
+}
+
+.search_form {
+	text-align: center;
+}
+
+.search_input {
+	line-height:25px;
+	border-radius:10px;
+	padding:5px;
+}
+
+.search_button {
+	font-size:17px;
+	border-radius:10px;
+	padding:5px;
+	cursor:pointer;
+}
